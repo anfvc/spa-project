@@ -7,9 +7,19 @@ function Products() {
   return (
     <div>
       <h2>Hello! This is our entire Product Offering!</h2>
-      <p>Here you can find products from different caterogies, such as:
-        {state.products.map(product =>
-          <li key={product.id}>{product.category}</li>)}</p>
+      <p>Here you can find products from different categories, such as:</p>
+      <div className="products-container">
+      {state.products.map((product) => {
+        return (
+          <div className="product-card" key={product.id}>
+            <img src={product.image} alt="" />
+            <h3>{product.title}</h3>
+
+          </div>
+        );
+      })}
+
+      </div>
     </div>
   );
 }
