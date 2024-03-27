@@ -1,7 +1,7 @@
 function Home() {
   return (
     <div>
-      <h1>Welcome to React & Vite Shop!</h1>
+      <h1>Reactando Shop</h1>
     </div>
   );
 }

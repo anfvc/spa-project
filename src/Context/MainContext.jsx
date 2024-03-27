@@ -7,6 +7,7 @@ export const MainContext = createContext();
 const initialState = {
   products: [],
   isLoading: false,
+  likedProducts: [],
 };
 
 function reducer(currentState, action) {
@@ -14,13 +15,22 @@ function reducer(currentState, action) {
     case "SET_PRODUCT": {
       return {
         ...currentState,
-        products: [...action.payload]
+        products: [...action.payload],
       };
     }
     case "IS_LOADING": {
       return {
-        ...currentState, isLoading: false,
-      }
+        ...currentState,
+        isLoading: false,
+      };
+    }
+    case "ADD_LIKED_ITEM": {
+      return {
+        ...currentState,
+        likedProducts: [...currentState.likedProducts, action.payload],
+      };
+    } case "DELETE": {
+      return {...currentState, likedProducts: [...currentState.likedProducts.filter(item => item.id !== action.payload)]}
     }
   }
 }
@@ -35,6 +45,7 @@ function MainContextProvider({ children }) {
         if (response.ok) {
           const products = await response.json();
           dispatch({ type: "SET_PRODUCT", payload: products });
+          dispatch({ type: "IS_LOADING" });
           console.log(products);
         } else {
           throw new Error("We faced a problem fetching the data");
@@ -46,7 +57,22 @@ function MainContextProvider({ children }) {
     getProducts();
   }, []);
 
-  return <MainContext.Provider value={{state, dispatch}}>{children}</MainContext.Provider>;
+  function handleLike(product) {
+    // checking if the product was already liked or added to the liked items
+    const isLiked = state.likedProducts.find(item => item.id === product.id)
+
+    if (!isLiked) {
+      //if it hasn't been added, let's add it
+      dispatch({type: "ADD_LIKED_ITEM", payload: product})
+    }
+
+  }
+
+  return (
+    <MainContext.Provider value={{ state, dispatch, handleLike }}>
+      {children}
+    </MainContext.Provider>
+  );
 }
 
 export default MainContextProvider;
