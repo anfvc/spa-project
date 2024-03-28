@@ -8,6 +8,7 @@ const initialState = {
   products: [],
   isLoading: false,
   likedProducts: [],
+  cart: [],
 };
 
 function reducer(currentState, action) {
@@ -40,6 +41,12 @@ function reducer(currentState, action) {
         ],
       };
     }
+    case "TO_CART": {
+      return {
+        ...currentState,
+        cart: [...currentState.cart, action.payload],
+      };
+    }
   }
 }
 
@@ -54,7 +61,6 @@ function MainContextProvider({ children }) {
           const products = await response.json();
           dispatch({ type: "SET_PRODUCT", payload: products });
           dispatch({ type: "IS_LOADING" });
-
           console.log(products); //checking the data in the console:
         } else {
           throw new Error("We faced a problem fetching the data");
@@ -75,6 +81,8 @@ function MainContextProvider({ children }) {
       dispatch({ type: "ADD_LIKED_ITEM", payload: product });
     }
   }
+
+  function handleCart(product) {}
 
   return (
     <MainContext.Provider value={{ state, dispatch, handleLike }}>

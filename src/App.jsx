@@ -1,5 +1,5 @@
 import "./App.css";
-import Layout from "./Components/Layout";
+import Layout from "./Components/LayOut/Layout";
 import Home from "./Components/Home";
 import Products from "./Components/ProductsList/ProductsList";
 import ShoppingCart from "./Components/ShoppingCart";

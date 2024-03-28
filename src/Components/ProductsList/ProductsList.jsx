@@ -3,7 +3,7 @@ import { MainContext } from "../../Context/MainContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
-import "./ProductsList.css"
+import "./ProductsList.css";
 
 function Products() {
   const { state, handleLike } = useContext(MainContext);
@@ -21,8 +21,10 @@ function Products() {
               <div className="product-card" key={product.id}>
                 <div className="product-img-container">
                   <img src={product.image} alt="product-images" />
+                  <span className="new">New</span>
                   <span
                     type="button"
+                    title="Like Product"
                     onClick={() => handleLike(product)}
                     className="heart"
                   >

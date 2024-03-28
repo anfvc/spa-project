@@ -31,7 +31,7 @@ function LikedItems() {
                 </div>
                 <div className="wishlist-info-container">
                   <h4>{liked.title}</h4>
-                  <span className="price">{liked.price}€</span>
+                  <span className="price-liked">{liked.price}€</span>
                   {/* <legend>{liked.description}</legend> */}
                 </div>
               </div>

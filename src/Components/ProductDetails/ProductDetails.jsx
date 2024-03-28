@@ -10,37 +10,51 @@ function ProductDetails() {
   //we need to find the product that matches our :id from our Route path
   const findProduct = state.products.find((product) => product.id === +id);
 
-  if (!findProduct) {
-    return <div>Loading...</div>;
-  }
-
   return (
-    <div className="single-product-container">
-      <div className="image-details-container">
-        <img id="product-details-image" src={findProduct.image} alt={findProduct.title}  />
-      </div>
-      <div className="desc">
-        <h2>{findProduct.title}</h2>
-        <h3 className="price">{findProduct.price}€</h3><span className="vat">VAT included</span>
-        <span>
-          {findProduct.description[0].toUpperCase() +
-            findProduct.description.slice(1)}
-        </span>
-        <div className="supporting-info">
-          <span>
-            <h3>Sizes:</h3>
-          </span>
-          <span className="sizes">
-            <div>XS</div>
-            <div>S</div>
-            <div>M</div>
-            <div>L</div>
-            <div>XL</div>
-            <div>XXL</div>
-          </span>
+    <>
+      {!findProduct ? (
+        <h4 className="loading-details">Loading...</h4>
+      ) : (
+        <div className="single-product-container">
+          <div className="image-details-container">
+            <img
+              id="product-details-image"
+              src={findProduct.image}
+              alt={findProduct.title}
+            />
+          </div>
+          <div className="desc">
+            <div className="desc-top">
+              <h2>{findProduct.title}</h2>
+              <h5>
+                <span className="price">{findProduct.price}€</span> - VAT
+                INCLUDED
+              </h5>
+              <span>
+                {findProduct.description[0].toUpperCase() +
+                  findProduct.description.slice(1)}.
+              </span>
+            </div>
+            <div className="supporting-info">
+              <span>
+                <h3>Sizes:</h3>
+              </span>
+              <span className="sizes">
+                <div>XS</div>
+                <div>S</div>
+                <div>M</div>
+                <div>L</div>
+                <div>XL</div>
+                <div>XXL</div>
+              </span>
+            </div>
+            <div>
+              <button /* onClick={""} */>ADD TO CART</button>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 }
 
