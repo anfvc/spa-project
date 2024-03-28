@@ -1,0 +1,81 @@
+/* LIKED ITEMS COMPONENT */
+
+.empty {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 3rem;
+}
+
+.wishlist-products {
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-auto-rows: 2fr;
+  place-items: center;
+  gap: 2rem;
+  min-width: 50vw;
+  min-height: 60vh;
+  padding: 5rem;
+  margin-top: 5rem;
+}
+
+.wishlist-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  border: 1px solid black;
+  position: relative;
+
+}
+
+.wishlist-img-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wishlist-img-container img {
+  width: 60%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.wishlist-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+}
+
+.x {
+  background-color: rgba(212, 212, 212, 0.329);
+  /* border: 1px solid green; */
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.x:hover {
+  background-color: rgba(223, 37, 37, 0.849);
+}
+
+.x:active {
+  color: white;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 3px;
+  color: rgba(223, 37, 37, 0.781);
+}

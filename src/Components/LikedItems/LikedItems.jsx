@@ -1,7 +1,8 @@
 import { useContext } from "react";
-import { MainContext } from "../Context/MainContext";
+import { MainContext } from "../../Context/MainContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
+import "./LikedItems.css"
 
 function LikedItems() {
   const { state, dispatch } = useContext(MainContext);

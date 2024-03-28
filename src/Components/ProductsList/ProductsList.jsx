@@ -1,7 +1,9 @@
 import { useContext } from "react";
-import { MainContext } from "../Context/MainContext";
+import { MainContext } from "../../Context/MainContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import { Link, useNavigate } from "react-router-dom";
+import "./ProductsList.css"
 
 function Products() {
   const { state, handleLike } = useContext(MainContext);
@@ -30,6 +32,7 @@ function Products() {
                 <div className="info-container">
                   <h4>{product.title}</h4>
                   <span>{product.price}€</span>
+                  <Link to={`/products/${product.id}`}>View Product</Link>
                 </div>
               </div>
             );

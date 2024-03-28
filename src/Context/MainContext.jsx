@@ -29,8 +29,16 @@ function reducer(currentState, action) {
         ...currentState,
         likedProducts: [...currentState.likedProducts, action.payload],
       };
-    } case "DELETE": {
-      return {...currentState, likedProducts: [...currentState.likedProducts.filter(item => item.id !== action.payload)]}
+    }
+    case "DELETE": {
+      return {
+        ...currentState,
+        likedProducts: [
+          ...currentState.likedProducts.filter(
+            (item) => item.id !== action.payload
+          ),
+        ],
+      };
     }
   }
 }
@@ -46,7 +54,8 @@ function MainContextProvider({ children }) {
           const products = await response.json();
           dispatch({ type: "SET_PRODUCT", payload: products });
           dispatch({ type: "IS_LOADING" });
-          console.log(products);
+
+          console.log(products); //checking the data in the console:
         } else {
           throw new Error("We faced a problem fetching the data");
         }
@@ -59,13 +68,12 @@ function MainContextProvider({ children }) {
 
   function handleLike(product) {
     // checking if the product was already liked or added to the liked items
-    const isLiked = state.likedProducts.find(item => item.id === product.id)
+    const isLiked = state.likedProducts.find((item) => item.id === product.id);
 
     if (!isLiked) {
       //if it hasn't been added, let's add it
-      dispatch({type: "ADD_LIKED_ITEM", payload: product})
+      dispatch({ type: "ADD_LIKED_ITEM", payload: product });
     }
-
   }
 
   return (
