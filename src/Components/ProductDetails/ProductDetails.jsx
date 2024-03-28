@@ -16,6 +16,9 @@ function ProductDetails() {
         <h4 className="loading-details">Loading...</h4>
       ) : (
         <div className="single-product-container">
+          <span title="Back" className="back">
+            New
+          </span>
           <div className="image-details-container">
             <img
               id="product-details-image"
@@ -32,7 +35,8 @@ function ProductDetails() {
               </h5>
               <span>
                 {findProduct.description[0].toUpperCase() +
-                  findProduct.description.slice(1)}.
+                  findProduct.description.slice(1)}
+                .
               </span>
             </div>
             <div className="supporting-info">

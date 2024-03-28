@@ -11,12 +11,11 @@
   border: 1px solid black;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  grid-auto-rows: 2fr;
+  grid-auto-rows: 1fr;
   place-items: center;
   gap: 2rem;
   min-width: 50vw;
-  max-height: 70vw;
-  min-height: 60vh;
+  min-height: 100vh;
   padding: 5rem;
   margin-top: 5rem;
 }
@@ -53,6 +52,7 @@
   justify-content: center;
   width: 50%;
   height: 100%;
+  padding: 2rem;
 }
 
 .x {
