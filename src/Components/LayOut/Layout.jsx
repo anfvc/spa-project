@@ -21,22 +21,22 @@ function Layout() {
             <li>Men</li>
           </ul>
           <ul className="mid-navbar">
-            <NavLink to="/">
+            <NavLink to="/" title="Home">
               <li>Home</li>
             </NavLink>
 
-            <NavLink to="/products">
+            <NavLink to="/products" title="Products">
               <li>Products</li>
             </NavLink>
           </ul>
           <ul className="right-navbar">
             <NavLink to="/cart">
-              <li className="cart-icon">
+              <li className="cart-icon" title="Shopping Cart">
                 <FontAwesomeIcon icon={faCartShopping} />
               </li>
             </NavLink>
             <NavLink to="/liked">
-              <li className="heart-icon">
+              <li className="heart-icon" title="Liked Products">
                 <FontAwesomeIcon icon={faHeart} />
               </li>
             </NavLink>

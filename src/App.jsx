@@ -2,10 +2,10 @@ import "./App.css";
 import Layout from "./Components/LayOut/Layout";
 import Home from "./Components/Home";
 import Products from "./Components/ProductsList/ProductsList";
-import ShoppingCart from "./Components/ShoppingCart";
 import LikedItems from "./Components/LikedItems/LikedItems";
 import { Route, Routes } from "react-router-dom";
 import ProductDetails from "./Components/ProductDetails/ProductDetails";
+import ShoppingCart from "./Components/ShoppingCart/ShoppingCart";
 
 
 function App() {

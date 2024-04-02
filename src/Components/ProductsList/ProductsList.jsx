@@ -20,7 +20,7 @@ function Products() {
             return (
               <div className="product-card" key={product.id}>
                 <div className="product-img-container">
-                  <img src={product.image} alt="product-images" />
+                  <img src={product.image} alt="product-images" className="product-list-image" />
                   <span className="new">New</span>
                   <span
                     type="button"

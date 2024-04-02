@@ -82,8 +82,6 @@ function MainContextProvider({ children }) {
     }
   }
 
-  function handleCart(product) {}
-
   return (
     <MainContext.Provider value={{ state, dispatch, handleLike }}>
       {children}
