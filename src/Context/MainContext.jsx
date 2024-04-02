@@ -47,6 +47,14 @@ function reducer(currentState, action) {
         cart: [...currentState.cart, action.payload],
       };
     }
+    case "DELETE_CART": {
+      return {
+        ...currentState,
+        cart: [
+          ...currentState.cart.filter((item) => item.id !== action.payload),
+        ],
+      };
+    }
   }
 }
 

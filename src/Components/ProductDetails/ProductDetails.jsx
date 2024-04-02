@@ -30,7 +30,7 @@ function ProductDetails() {
         <h4 className="loading-details">Loading...</h4>
       ) : (
         <div className="single-product-container">
-          <span title="Back" className="back">
+          <span title="Back" className="back"> {/* NEED TO FIX THIS */}
             New
           </span>
           <div className="image-details-container">
