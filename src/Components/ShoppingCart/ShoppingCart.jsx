@@ -61,7 +61,17 @@ function ShoppingCart() {
                   </div>
                   <div className="cart-desc">
                     <h3>{product.title}</h3>
-                    <h4>{product.price}€</h4>
+                    <div className="quantity-wrapper">
+                      <h4>{product.price}€</h4>
+                      <input
+                        type="number"
+                        className="quantity"
+                        name="quantity"
+                        min={1}
+                        max={5}
+                      />
+                    </div>
+
                     <div className="buttons-cart">
                       <Link
                         className="delete-cart"

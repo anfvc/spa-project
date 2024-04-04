@@ -66,7 +66,7 @@
 .cart-desc {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   padding: 2rem;
 }
 
@@ -76,6 +76,21 @@
 
 .delete-cart {
   width: 10%;
-  padding: 1rem;
   text-align: center;
+
+}
+
+.quantity-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.quantity {
+  height: 5rem;
+  width: 6rem;
+  padding: .5rem;
+
 }

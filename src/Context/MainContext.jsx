@@ -31,7 +31,7 @@ function reducer(currentState, action) {
         likedProducts: [...currentState.likedProducts, action.payload],
       };
     }
-    case "DELETE": {
+    case "DELETE_LIKED": {
       return {
         ...currentState,
         likedProducts: [

@@ -22,7 +22,7 @@ function LikedItems() {
                   <span
                     type="button"
                     onClick={() =>
-                      dispatch({ type: "DELETE", payload: liked.id })
+                      dispatch({ type: "DELETE_LIKED", payload: liked.id })
                     }
                     className="x"
                   >
