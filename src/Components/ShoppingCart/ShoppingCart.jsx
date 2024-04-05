@@ -11,13 +11,25 @@ function ShoppingCart() {
 
   const navigate = useNavigate();
 
-  function checkOut() {
-    return state.cart.reduce((acc, current) => {
-      return acc + current.price;
-    }, 0);
+  function handleQuantity(productId, quantity) {
+    dispatch({ type: "PRODUCT_QUANTITY", payload: { productId, quantity } });
   }
 
-  const total = checkOut();
+  const delivery = 4.99;
+  // if total is above 29.90€, delivery will be free. If not, we charge 4.99€ delivery
+  const freeDeliveryFrom = 29.9;
+
+  function checkOut() {
+    let subTotal = state.cart.reduce((acc, current) => {
+      console.log(state.cart);
+      return acc + current.price * current.quantity;
+    }, 0);
+    subTotal += state.cart.length < freeDeliveryFrom ? delivery : 0;
+    return subTotal;
+  }
+
+  const subTotal = checkOut();
+  const total = subTotal + (subTotal < freeDeliveryFrom ? delivery : 0);
 
   return (
     <>
@@ -36,23 +48,21 @@ function ShoppingCart() {
       ) : (
         <>
           {state.cart.length <= 1 ? (
-            <div>
-              <h2 className="your-cart">
-                Your cart ({state.cart.length + " item"})
-              </h2>
+            <div className="your-cart">
+              <h2>Your cart ({state.cart.length + " item"})</h2>
+              <p>You can add up to 5 items per product.</p>
             </div>
           ) : (
-            <div>
-              <h2 className="your-cart">
-                Your cart ({state.cart.length + " items"})
-              </h2>
+            <div className="your-cart">
+              <h2>Your cart ({state.cart.length + " items"})</h2>
+              <p>You can add up to 5 items per product.</p>
             </div>
           )}
           <div className="general-cart">
             <div className="basket">
               {state.cart.map((product) => (
                 <div className="cart-card" key={product.id}>
-                  <div className="cart-image">
+                  <div className="image-holder">
                     <img
                       src={product.image}
                       alt={product.title}
@@ -69,6 +79,10 @@ function ShoppingCart() {
                         name="quantity"
                         min={1}
                         max={5}
+                        value={product.quantity || 1}
+                        onChange={(e) =>
+                          handleQuantity(product.id, e.target.value)
+                        }
                       />
                     </div>
 
@@ -88,7 +102,20 @@ function ShoppingCart() {
             </div>
             <div className="checkout">
               <h2>Total</h2>
-              <h4>Total: {total}€</h4>
+              <div className="subtotal-div">
+                <h4>Subtotal </h4>
+                <h4>{subTotal.toFixed(2)}€</h4>
+              </div>
+              <div className="delivery-div">
+                <h4>Delivery Costs </h4>
+                <h4>
+                  {subTotal < freeDeliveryFrom ? delivery + "€" : 0.0 + "€"}
+                </h4>
+              </div>
+              <div className="total-div">
+                <h3>Total (VAT included)</h3>
+                <h3>{total.toFixed(2)}€</h3>
+              </div>
             </div>
           </div>
         </>

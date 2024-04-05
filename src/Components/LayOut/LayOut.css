@@ -35,8 +35,8 @@
 }
 
 .extra-details {
-  padding: 0.4rem;
-  width: 40%;
+  padding: 0.4rem 0;
+  width: 50%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -51,8 +51,8 @@
 }
 
 nav {
-  min-width: 10%;
-  width: 40%;
+  min-width: 50%;
+  width: 50%;
   height: 100%;
   display: flex;
   justify-content: space-between;

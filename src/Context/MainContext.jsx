@@ -42,9 +42,14 @@ function reducer(currentState, action) {
       };
     }
     case "TO_CART": {
+      const newProduct = {
+        ...action.payload,
+        quantity: +1, //quantity should be a number
+      };
+
       return {
         ...currentState,
-        cart: [...currentState.cart, action.payload],
+        cart: [...currentState.cart, newProduct],
       };
     }
     case "DELETE_CART": {
@@ -53,6 +58,26 @@ function reducer(currentState, action) {
         cart: [
           ...currentState.cart.filter((item) => item.id !== action.payload),
         ],
+      };
+    }
+    case "PRODUCT_QUANTITY": {
+      console.log("payload received", action.payload);
+      const newCart = currentState.cart.map((item) => {
+        if (item.id === action.payload.productId) {
+          console.log(currentState.item);
+          return {
+            ...item,
+            quantity: +action.payload.quantity || 1, //setting quantity as 1 by default
+          };
+        }
+        return item;
+      });
+      console.log(action.payload.quantity);
+      console.log("NEW CART", newCart);
+
+      return {
+        ...currentState,
+        cart: newCart,
       };
     }
   }
