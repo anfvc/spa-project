@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import Loader from "../Loader/Loader";
 import CoolButton from "../Button/CoolButton";
+import CoolCheckBox from "../CoolCheckBox/CoolCheckBox";
 
 function ProductDetails() {
   const { state, dispatch, handleLike } = useContext(MainContext);
@@ -32,12 +33,20 @@ function ProductDetails() {
 
     //if the product does not exist in the cart, let's add it:
     if (!isAlreadyAdded) {
-      const productToAdd = {
-        ...findProduct,
-        selectedSize,
-        selectedColors,
-      };
-      dispatch({ type: "TO_CART", payload: productToAdd });
+
+      if (!selectedColors.length) { //if there are no colors selected, alert the user
+        alert("You must select a color first");
+      } else if (!selectedSize) { //if no size is selected, alert the user
+        alert("You must select a size first.");
+      } else { //if all data has been filled out, send the product to cart
+        const productToAdd = {
+          ...findProduct,
+          selectedSize,
+          selectedColors,
+        };
+
+        dispatch({ type: "TO_CART", payload: productToAdd });
+      }
     }
   }
 
@@ -87,34 +96,43 @@ function ProductDetails() {
                     <h5>Color:</h5>
                   </div>
                   <div className="colors-container">
-                    <input
+                    <CoolCheckBox
                       name="Red"
-                      id="Red"
                       type="checkbox"
+                      id="Red"
                       onChange={handleColor}
                       value="Red"
                     />
-                    <label htmlFor="Red">Red</label>
-                    <input
+                    <label id="Red" htmlFor="Red">
+                      Red
+                    </label>
+
+                    <CoolCheckBox
                       name="Green"
-                      id="Green"
                       type="checkbox"
+                      id="Green"
                       onChange={handleColor}
                       value="Green"
                     />
-                    <label htmlFor="Green">Green</label>
-                    <input
+                    <label id="Green" htmlFor="Green">
+                      Green
+                    </label>
+
+                    <CoolCheckBox
                       name="Blue"
-                      id="Blue"
                       type="checkbox"
+                      id="Blue"
                       onChange={handleColor}
                       value="Blue"
                     />
-                    <label htmlFor="Blue">Blue</label>
-                    <input
+                    <label id="Blue" htmlFor="Blue">
+                      Blue
+                    </label>
+
+                    <CoolCheckBox
                       name="Yellow"
-                      id="Yellow"
                       type="checkbox"
+                      id="Yellow"
                       onChange={handleColor}
                       value="Yellow"
                     />
