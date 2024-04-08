@@ -24,12 +24,14 @@ function ShoppingCart() {
       console.log(state.cart);
       return acc + current.price * current.quantity;
     }, 0);
-    subTotal += state.cart.length < freeDeliveryFrom ? delivery : 0;
-    return subTotal;
+
+    const deliveryCost = subTotal >= freeDeliveryFrom ? 0 : delivery;
+
+    return { subTotal, deliveryCost };
   }
 
-  const subTotal = checkOut();
-  const total = subTotal + (subTotal < freeDeliveryFrom ? delivery : 0);
+  const { subTotal, deliveryCost } = checkOut();
+  const total = subTotal + deliveryCost;
 
   return (
     <>
@@ -72,7 +74,9 @@ function ShoppingCart() {
                   <div className="cart-desc">
                     <h3>{product.title}</h3>
                     <div className="quantity-wrapper">
-                      <h4>{product.price}€</h4>
+                      <h4>
+                        <span>{product.price}€</span> - VAT included
+                      </h4>
                       <input
                         type="number"
                         className="quantity"
@@ -85,6 +89,13 @@ function ShoppingCart() {
                         }
                       />
                     </div>
+                    {product.category === "men's clothing" ||
+                    product.category === "women's clothing" ? (
+                      <div className="colorAndSize">
+                        <h5>Size: {product.selectedSize}</h5>
+                        <h5>Color: {product.selectedColors}</h5>
+                      </div>
+                    ) : null}
 
                     <div className="buttons-cart">
                       <Link
@@ -108,9 +119,7 @@ function ShoppingCart() {
               </div>
               <div className="delivery-div">
                 <h4>Delivery Costs </h4>
-                <h4>
-                  {subTotal < freeDeliveryFrom ? delivery + "€" : 0.0 + "€"}
-                </h4>
+                <h4>{deliveryCost}€</h4>
               </div>
               <div className="total-div">
                 <h3>Total (VAT included)</h3>

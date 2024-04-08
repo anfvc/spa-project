@@ -9,6 +9,8 @@ const initialState = {
   isLoading: false,
   likedProducts: [],
   cart: [],
+  selectedSize: null,
+  selectedColors: [],
 };
 
 function reducer(currentState, action) {
@@ -45,6 +47,8 @@ function reducer(currentState, action) {
       const newProduct = {
         ...action.payload,
         quantity: +1, //quantity should be a number
+        selectedSize: action.payload.selectedSize,
+        selectedColors: action.payload.selectedColors,
       };
 
       return {

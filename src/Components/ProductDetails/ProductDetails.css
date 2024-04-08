@@ -16,7 +16,7 @@
 .single-product-container {
   display: flex;
   gap: 2rem;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   min-height: 60vh;
   min-width: 20vw;
   max-width: 50vw;
@@ -34,19 +34,17 @@
 
 #product-details-image {
   width: 100%;
-  height: 80%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  padding: 1rem;
+  object-fit: cover;
+  mix-blend-mode: lighten;
 }
 .desc {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   border: 1px solid black;
-  width: 50%;
+  width: 100%;
+  /* height: 100%; */
   padding: 5rem;
   line-height: 2;
 }
@@ -54,10 +52,11 @@
 .desc-top {
   width: 100%;
   border: 1px solid black;
+  margin-bottom: 3rem;
 }
 
-.desc > h2 {
-  align-self: self-start;
+.desc-top-title {
+  text-align: start;
 }
 
 .price-liked {
@@ -69,23 +68,161 @@
 
 .supporting-info {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
-  height: 20%;
+  height: 100%;
   position: relative;
+  margin-bottom: 2rem;
 }
 
-.supporting-info select {
-  height: 50%;
+.colors-container {
+  display: flex;
   width: 100%;
-  padding: 1rem;
+  height: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+  padding: 1.5rem 0.5rem;
+  border-top: 1px solid rgba(187, 187, 187, 0.568);
+  border-bottom: 1px solid rgba(187, 187, 187, 0.568);
+}
+
+.sizes-container {
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem 0;
+}
+
+.supporting-info #sizes {
+  height: 100%;
+  width: 100%;
+  padding: 1.5rem 0.5rem;
   appearance: none;
   background-color: transparent;
   position: relative;
   cursor: pointer;
+  border: none;
+  border-top: 1px solid rgba(187, 187, 187, 0.568);
+  border-bottom: 1px solid rgba(187, 187, 187, 0.568);
+  font-weight: bold;
+  font-size: 1.3rem;
 }
 
 .supporting-info select::after {
   content: "⌄";
+}
+
+.toggle {
+  width: 100%;
+  /* overflow: hidden; */
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.toggle-button {
+  width: 100%;
+  text-align: start;
+  padding: 1.5rem 0.5rem;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border-top: 1px solid rgba(187, 187, 187, 0.568);
+  border-bottom: 1px solid rgba(187, 187, 187, 0.568);
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.caret-desc {
+  font-size: 1.8rem;
+}
+
+.hide-description {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease; /* hide the description smoothly */
+}
+
+.show-description {
+  max-height: 100%; /* Adjust based on your content */
+  overflow: visible;
+  opacity: 1;
+  transition: max-height 0.5s ease, opacity 0.5s ease; /* Show the description smoothly */
+}
+
+.add-to-cart-container {
+  display: flex;
+  width: 100%;
+  height: 10%;
+  gap: 1rem;
+}
+
+.btn-heart-PD {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+  background-color: lightgray;
+}
+
+.btn-heart-PD {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.btn-heart-PD::after {
+  content: "like";
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  font-size: 15px;
+  color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s linear;
+  top: 115%;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  transition: 0.2s linear;
+}
+
+.icon path {
+  fill: rgba(0, 0, 0, 0.781);
+  transition: 0.2s linear;
+}
+
+.btn-heart-PD:hover > .icon {
+  transform: scale(1.5);
+}
+
+.btn-heart-PD:hover > .icon path {
+  fill: #0c91fd;
+}
+
+.btn-heart-PD:hover::after {
+  visibility: visible;
+  opacity: 1;
+  top: 105%;
+}
+
+.btn-heart-PD:active {
+  fill: #f1410c;
 }

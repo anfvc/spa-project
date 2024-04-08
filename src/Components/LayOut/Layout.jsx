@@ -3,8 +3,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import "./LayOut.css";
+import { useContext } from "react";
+import { MainContext } from "../../Context/MainContext";
 
 function Layout() {
+  const { state } = useContext(MainContext);
+
   return (
     <div className="layout">
       <div className="nav-holder">
@@ -33,11 +37,27 @@ function Layout() {
             <NavLink to="/cart">
               <li className="cart-icon" title="Shopping Cart">
                 <FontAwesomeIcon icon={faCartShopping} />
+                <span
+                  className={
+                    state.cart.length ? "bubble-heart" : "no-bubble-heart"
+                  }
+                >
+                  {state.cart.length}
+                </span>
               </li>
             </NavLink>
             <NavLink to="/liked">
               <li className="heart-icon" title="Liked Products">
                 <FontAwesomeIcon icon={faHeart} />
+                <span
+                  className={
+                    state.likedProducts.length
+                      ? "bubble-cart"
+                      : "no-bubble-cart"
+                  }
+                >
+                  {state.likedProducts.length}
+                </span>
               </li>
             </NavLink>
           </ul>

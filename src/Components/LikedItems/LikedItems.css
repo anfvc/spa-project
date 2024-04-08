@@ -7,6 +7,10 @@
   font-size: 3rem;
 }
 
+.intro-likedItems-cart {
+  text-align: center;
+}
+
 .wishlist-products {
   border: 1px solid black;
   display: grid;

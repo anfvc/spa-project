@@ -9,7 +9,7 @@ function LikedItems() {
 
   return (
     <div className="wishlist">
-      <h2>These are your most liked products!</h2>
+      <h2 className="intro-likedItems-cart">These are your most liked products!</h2>
       {state.likedProducts.length < 1 ? (
         <div className="empty"><h3>Did you forget something? Your wishlist is currently empty...</h3></div>
       ) : (
@@ -32,7 +32,6 @@ function LikedItems() {
                 <div className="wishlist-info-container">
                   <h4>{liked.title}</h4>
                   <span className="price-liked">{liked.price}€</span>
-                  {/* <legend>{liked.description}</legend> */}
                 </div>
               </div>
             );

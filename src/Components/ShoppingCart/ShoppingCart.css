@@ -22,8 +22,9 @@
 }
 
 .back-to-products {
-  padding: 1rem;
+  cursor: pointer;
   width: 50%;
+  padding: 1rem;
 }
 
 .general-cart {
@@ -84,6 +85,15 @@
   padding: 2rem;
 }
 
+.colorAndSize {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  width: 30%;
+  color: grey;
+}
+
 .buttons-cart {
   width: 100%;
 }
@@ -102,23 +112,27 @@
 
 .quantity {
   height: 5rem;
-  width: 6rem;
-  padding: 0.5rem;
+  width: 7rem;
+  padding: 1rem;
 }
 
 .subtotal-div {
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  padding: 1rem;
 }
 
 .delivery-div {
   display: flex;
   justify-content: space-between;
+  padding: 1rem;
 }
 
 .total-div {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   border-top: 1px solid rgba(196, 196, 196, 0.63);
-  padding-top: 1rem;
+  padding: 1rem;
 }
