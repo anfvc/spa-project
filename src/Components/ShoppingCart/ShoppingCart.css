@@ -6,10 +6,11 @@
   align-items: center;
   justify-content: center;
   gap: 4rem;
+  margin-top: 20rem;
 }
 
 .your-cart {
-  margin: 3rem;
+  margin: 20rem 0 5rem;
 }
 
 .your-cart p {

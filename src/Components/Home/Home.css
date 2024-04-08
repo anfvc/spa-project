@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+.home-image {
+  width: 99vw;
+  height: 100vh;
+  font-size: 1.6rem;
+  background-image: url("../../assets/homeimg.jpg");
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

@@ -26,25 +26,37 @@ function ProductDetails() {
       findProduct.category === "women's clothing");
 
   function handleCart() {
-    //checking if the product was already added to the cart:
+    // Checking if the product was already added to the cart:
     const isAlreadyAdded = state.cart.find(
       (product) => product.id === findProduct.id
     );
 
-    //if the product does not exist in the cart, let's add it:
+    // If the product does not exist in the cart, let's add it:
     if (!isAlreadyAdded) {
-
-      if (!selectedColors.length) { //if there are no colors selected, alert the user
-        alert("You must select a color first");
-      } else if (!selectedSize) { //if no size is selected, alert the user
-        alert("You must select a size first.");
-      } else { //if all data has been filled out, send the product to cart
+      if (
+        findProduct.category === "men's clothing" ||
+        findProduct.category === "women's clothing"
+      ) {
+        // Check for selected colors and size only for clothing products
+        if (selectedColors.length && selectedSize) {
+          const productToAdd = {
+            ...findProduct,
+            selectedSize,
+            selectedColors,
+          };
+          dispatch({ type: "TO_CART", payload: productToAdd });
+        } else {
+          if (!selectedColors.length) {
+            alert("You must select a color first");
+          } else if (!selectedSize) {
+            alert("You must select a size first.");
+          }
+        }
+      } else {
+        // For non-clothing products, directly add to cart without any alerts
         const productToAdd = {
           ...findProduct,
-          selectedSize,
-          selectedColors,
         };
-
         dispatch({ type: "TO_CART", payload: productToAdd });
       }
     }

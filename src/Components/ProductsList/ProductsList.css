@@ -1,5 +1,9 @@
 /* IMAGES FROM PRODUCTS LIST COMPONENT */
 
+.general-products-container {
+  margin-top: 20rem;
+}
+
 .products-container {
   margin-top: 5rem;
   display: grid;
@@ -55,7 +59,7 @@
   background-color: red;
   color: white;
   font-weight: 800;
-  padding: .5rem;
+  padding: 0.5rem;
   bottom: 2%;
   left: 0;
 }

@@ -9,7 +9,7 @@ function Products() {
   const { state, handleLike } = useContext(MainContext);
 
   return (
-    <div>
+    <div className="general-products-container">
       <h2>Hello! This is our entire Product Offering!</h2>
       <p>Here you can find different products, such as:</p>
       {state.isLoading ? (

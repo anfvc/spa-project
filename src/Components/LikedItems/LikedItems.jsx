@@ -8,8 +8,7 @@ function LikedItems() {
   const { state, dispatch } = useContext(MainContext);
 
   return (
-    <div className="wishlist">
-      <h2 className="intro-likedItems-cart">These are your most liked products!</h2>
+    <>
       {state.likedProducts.length < 1 ? (
         <div className="empty"><h3>Did you forget something? Your wishlist is currently empty...</h3></div>
       ) : (
@@ -38,7 +37,7 @@ function LikedItems() {
           })}
         </div>
       )}
-    </div>
+    </>
   );
 }
 
