@@ -82,7 +82,7 @@ function ShoppingCart() {
                     <div className="quantity-wrapper">
                       <h4>
                         <span className="price-shopping-cart">
-                          {product.price}€
+                          {product.price.toFixed(2)}€
                         </span>{" "}
                         - VAT included
                       </h4>
@@ -128,12 +128,13 @@ function ShoppingCart() {
               </div>
               <div className="delivery-div">
                 <h4>Delivery Costs </h4>
-                <h4>{deliveryCost}€</h4>
+                <h4>{deliveryCost.toFixed(2)}€</h4>
               </div>
               <div className="total-div">
                 <h3>Total (VAT included)</h3>
                 <h3>{total.toFixed(2)}€</h3>
               </div>
+                <button onClick={() => navigate("/order")} title="Pay Now" className="pay-now">Pay Now</button>
             </div>
           </div>
         </>

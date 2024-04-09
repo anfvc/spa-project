@@ -84,6 +84,23 @@ function reducer(currentState, action) {
         cart: newCart,
       };
     }
+    case "SUBMIT_PAYMENT": {
+      return {
+        ...currentState,
+        isLoading: false,
+        paymentSubmitted: true,
+      };
+    }
+    case "CLEAR_ORDER_SUMMARY":
+      return {
+        ...currentState,
+        orderSummary: [],
+      };
+    case "EMPTY_CART":
+      return {
+        ...currentState,
+        cart: [],
+      };
   }
 }
 

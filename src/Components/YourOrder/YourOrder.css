@@ -1,0 +1,145 @@
+.order-container {
+  margin: 20rem 0 10rem;
+  width: 70vw;
+  /* height: 100vh; */
+  max-width: 1200px;
+}
+
+.summary {
+  text-align: left;
+  padding: 3rem 0;
+}
+
+.column-container {
+  display: flex;
+  gap: 3rem;
+  width: 100%;
+  height: 100%;
+  align-items: flex-start;
+  background-color: rgba(218, 216, 216, 0.6);
+}
+
+.order-column {
+  border: 1px solid rgba(99, 99, 99, 0.685);
+  background-color: white;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.delivery-column {
+  width: 50%;
+  height: 100%;
+  border: 1px solid rgba(99, 99, 99, 0.685);
+  background-color: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* padding: 2rem; */
+}
+
+form > label {
+  margin: 0.5rem 0;
+  font-weight: bold;
+}
+
+form > input {
+  padding: 0.8rem;
+  width: 100%;
+  outline-color: #731627;
+  border: none;
+  border-bottom: 1px solid rgb(196, 196, 196);
+}
+
+.pay-message {
+  text-align: left;
+  font-size: 1.3rem;
+}
+
+#payment {
+  width: 100%;
+  padding: 0.8rem;
+  outline-color: #731627;
+}
+
+option:hover {
+  background-color: #731627;
+}
+
+.order-from-cart {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.order-product-card {
+  display: flex;
+  width: 100%;
+  padding: 1rem;
+  gap: 1rem;
+  border-bottom: 1px solid rgba(218, 216, 216, 0.788);
+}
+
+.image-order {
+  width: 30%;
+  /* border: 1px solid black; */
+}
+
+.image-order2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.order-image {
+  width: 30%;
+}
+
+.order-desc {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 1.4rem;
+}
+
+.order-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.confirm {
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.confirm .confirm-button {
+  padding: 1.5rem;
+  width: 80%;
+}
+
+.error-message {
+  font-size: 1.2rem;
+  color: #731627;
+  font-weight: bold;
+  font-style: italic;
+}

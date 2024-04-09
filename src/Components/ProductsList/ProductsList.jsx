@@ -44,7 +44,7 @@ function Products() {
                     <h4 title={product.title} className="ellipsis">
                       {product.title}
                     </h4>
-                    <span className="product-price">{product.price}€</span>
+                    <span className="product-price">{product.price.toFixed(2)}€</span>
                   </div>
                 </div>
               </Link>

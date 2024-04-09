@@ -23,6 +23,7 @@ function Men() {
                 src={product.image}
                 alt={product.title}
               />
+              <span className="new">New</span>
             </div>
             <div className="men-info">
               <h3 className="men-title men-ellipsis">{product.title}</h3>

@@ -8,6 +8,7 @@ import ProductDetails from "./Components/ProductDetails/ProductDetails";
 import ShoppingCart from "./Components/ShoppingCart/ShoppingCart";
 import Men from "./Components/Men/Men";
 import Women from "./Components/Women/Women";
+import YourOrder from "./Components/YourOrder/YourOrder";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/women" element={<Women />} />
           <Route path="/products/:id" element={<ProductDetails />} />
           <Route path="/cart" element={<ShoppingCart />} />
+          <Route path="/order" element={<YourOrder />}/>
           <Route path="/liked" element={<LikedItems />} />
         </Route>
       </Routes>

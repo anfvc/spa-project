@@ -1,5 +1,7 @@
 .add-to-cart-button-PD,
-.back-to-products, .welcome-button {
+.back-to-products,
+.welcome-button,
+.pay-now, .confirm-button {
   background-color: rgba(187, 187, 187, 0.568);
   width: 100%;
   font-size: 18px;
@@ -21,7 +23,9 @@
 }
 
 .add-to-cart-button-PD:before,
-.back-to-products:before, .welcome-button:before {
+.back-to-products:before,
+.welcome-button:before,
+.pay-now:before, .confirm-button:before {
   transition: 0.5s all ease;
   position: absolute;
   top: 0;
@@ -37,14 +41,22 @@
 .add-to-cart-button-PD:hover,
 .add-to-cart-button-PD:focus,
 .back-to-products:hover,
-.back-to-products:focus, .welcome-button:hover, .welcome-button:focus {
+.back-to-products:focus,
+.welcome-button:hover,
+.welcome-button:focus,
+.pay-now:hover,
+.pay-now:focus, .confirm-button:hover, .confirm-button:focus {
   color: white;
 }
 
 .add-to-cart-button-PD:hover:before,
 .add-to-cart-button-PD:focus:before,
 .back-to-products:hover:before,
-.back-to-products:focus:before, .welcome-button:hover:before, .welcome-button:focus:before {
+.back-to-products:focus:before,
+.welcome-button:hover:before,
+.welcome-button:focus:before,
+.pay-now:hover:before,
+.pay-now:focus:before, .confirm-button:hover:before, .confirm-button:focus:before {
   transition: 0.5s all ease;
   left: 0;
   right: 0;
@@ -52,6 +64,8 @@
 }
 
 .add-to-cart-button-PD:active,
-.back-to-products:active, .welcome-button:active {
+.back-to-products:active,
+.welcome-button:active,
+.pay-now:active, .confirm-button:active {
   transform: scale(0.9);
 }

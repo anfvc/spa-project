@@ -27,6 +27,7 @@ function Women() {
                   src={product.image}
                   alt={product.title}
                 />
+                <span className="new">New</span>
               </div>
               <div className="women-info">
                 <h3
