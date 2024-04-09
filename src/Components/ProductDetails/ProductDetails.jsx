@@ -5,7 +5,7 @@ import "./ProductDetails.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import Loader from "../Loader/Loader";
-import CoolButton from "../Button/CoolButton";
+import CoolButton from "../CoolButton/CoolButton";
 import CoolCheckBox from "../CoolCheckBox/CoolCheckBox";
 
 function ProductDetails() {

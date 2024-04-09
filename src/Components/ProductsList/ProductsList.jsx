@@ -10,33 +10,44 @@ function Products() {
 
   return (
     <div className="general-products-container">
-      <h2>Hello! This is our entire Product Offering!</h2>
-      <p>Here you can find different products, such as:</p>
+      <h2>This is our Product Catalogue</h2>
+      <p>Here you can find different products, such as...</p>
       {state.isLoading ? (
         <p>Loading Products...</p>
       ) : (
         <div className="products-container">
           {state.products.map((product) => {
             return (
-              <div className="product-card" key={product.id}>
-                <div className="product-img-container">
-                  <img src={product.image} alt="product-images" className="product-list-image" />
-                  <span className="new">New</span>
-                  <span
-                    type="button"
-                    title="Like Product"
-                    onClick={() => handleLike(product)}
-                    className="heart"
-                  >
-                    <FontAwesomeIcon icon={faHeart} />
-                  </span>
+              <Link
+                to={`/products/${product.id}`}
+                className="product-card1"
+                key={product.id}
+              >
+                <div className="product-card2">
+                  <div className="product-img-container">
+                    <img
+                      src={product.image}
+                      alt="product-images"
+                      className="product-list-image"
+                    />
+                    <span className="new">New</span>
+                    <span
+                      type="button"
+                      title="Like Product"
+                      onClick={() => handleLike(product)}
+                      className="heart"
+                    >
+                      <FontAwesomeIcon icon={faHeart} />
+                    </span>
+                  </div>
+                  <div className="info-container">
+                    <h4 title={product.title} className="ellipsis">
+                      {product.title}
+                    </h4>
+                    <span className="product-price">{product.price}€</span>
+                  </div>
                 </div>
-                <div className="info-container">
-                  <h4>{product.title}</h4>
-                  <span>{product.price}€</span>
-                  <Link to={`/products/${product.id}`}>View Product</Link>
-                </div>
-              </div>
+              </Link>
             );
           })}
         </div>

@@ -18,9 +18,9 @@
   color: rgb(102, 102, 102);
 }
 
-.empty-cart-img {
+/* .empty-cart-img {
   border: 1px solid black;
-}
+} */
 
 .back-to-products {
   cursor: pointer;
@@ -34,17 +34,20 @@
   justify-content: center;
   gap: 1.2rem;
   background-color: rgba(218, 216, 216, 0.6);
+  padding: 2rem;
 }
 
 .checkout {
-  width: 25%;
+  width: 30%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   gap: 2rem;
   padding: 1.5rem;
   background-color: white;
+  position: sticky;
+  top: 12rem;
 }
 
 .basket {
@@ -52,29 +55,34 @@
   flex-direction: column;
   justify-content: center;
   width: 50%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   background-color: white;
 }
 
 .cart-card {
   width: 100%;
   height: 100%;
-  border-top: 1px solid rgba(131, 131, 131, 0.63);
+  /* border-top: 1px solid rgba(131, 131, 131, 0.63); */
   display: flex;
   padding: 2rem;
 }
 
 .image-holder {
+  width: 30%;
+}
+
+.image-holder2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30%;
+  width: 100%;
+  height: 100%;
 }
 
 .cart-img {
   padding: 2rem;
   min-width: 100%;
-  min-height: 80%;
+  min-height: 100%;
   object-fit: contain;
 }
 
@@ -86,12 +94,19 @@
   padding: 2rem;
 }
 
+.price-shopping-cart {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #731627;
+  letter-spacing: 3px;
+}
+
 .colorAndSize {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 1rem;
-  width: 30%;
+  width: 50%;
   color: grey;
 }
 
@@ -102,6 +117,14 @@
 .delete-cart {
   width: 10%;
   text-align: center;
+  text-decoration: none;
+  color: #7316278c;
+  font-weight: bold;
+}
+
+.delete-cart:hover,
+.delete-cart:active {
+  color: #731627;
 }
 
 .quantity-wrapper {
@@ -115,6 +138,7 @@
   height: 5rem;
   width: 7rem;
   padding: 1rem;
+  outline-color: #731627;
 }
 
 .subtotal-div {
@@ -135,5 +159,5 @@
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid rgba(196, 196, 196, 0.63);
-  padding: 1rem;
+  padding: 1.5rem;
 }

@@ -1,0 +1,67 @@
+.products-for-men {
+  margin: 20rem 0 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60vw;
+}
+
+.men-container {
+  padding: 3rem;
+  background-color: rgba(218, 216, 216, 0.6);
+  width: 100%;
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 3rem;
+}
+
+.men-card1 {
+  text-decoration: none;
+  color: black;
+}
+
+.men-card2 {
+  border: 1px solid rgba(99, 99, 99, 0.685);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.men-image-container {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  background-color: white;
+}
+
+.men-image {
+  width: 60%;
+  padding: 1rem;
+  object-fit: contain;
+}
+
+.men-info {
+  background-color: white;
+  padding: 1rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top: 1px solid rgba(218, 216, 216, 0.6);
+  font-size: 1.3rem;
+}
+
+.men-info .men-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.men-info .men-price {
+  color: #731627;
+  font-size: 2rem;
+}

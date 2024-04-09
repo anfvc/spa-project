@@ -18,7 +18,7 @@ function LikedItems() {
               <div className="wishlist-card" key={liked.id}>
                 <div className="wishlist-img-container">
                   <img src={liked.image} alt="product-images" className="wishlist-img" />
-                  <span
+                  <span title="Remove Item"
                     type="button"
                     onClick={() =>
                       dispatch({ type: "DELETE_LIKED", payload: liked.id })

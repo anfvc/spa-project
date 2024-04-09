@@ -1,26 +1,40 @@
 /* IMAGES FROM PRODUCTS LIST COMPONENT */
 
 .general-products-container {
-  margin-top: 20rem;
+  margin: 20rem 0 10rem;
+  width: 95vw;
+  max-width: 1200px;
+
+  /* padding: 2rem 5rem 2rem; */
+  /* background-color: rgba(218, 216, 216, 0.6); */
 }
 
 .products-container {
   margin-top: 5rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-auto-rows: 500px;
-  gap: 4rem;
-  width: 100%;
-  padding: 2rem;
+  gap: 3rem;
+  /* width: 60vw; */
+  /* padding: 4rem; */
+  background-color: rgba(218, 216, 216, 0.6);
+
 }
 
-.product-card {
+.product-card1 {
+  text-decoration: none;
+  color: black;
+}
+
+.product-card2 {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  border: 1px solid black;
+  height: 100%;
+  border: 1px solid rgba(99, 99, 99, 0.685);
+  background-color: white;
 }
 
 .product-img-container {
@@ -28,7 +42,7 @@
   height: 100%;
   position: relative;
   padding: 2rem;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   display: flex;
   justify-content: center;
   cursor: pointer;
@@ -49,14 +63,14 @@
 }
 
 .heart:active {
-  color: red;
+  color: #731627;
   font-size: 2.5rem;
   padding: 1rem;
 }
 
 .new {
   position: absolute;
-  background-color: red;
+  background-color: #731627;
   color: white;
   font-weight: 800;
   padding: 0.5rem;
@@ -84,9 +98,25 @@
   gap: 1rem;
   width: 100%;
   height: 50%;
-  border: 1px solid black;
+  border-top: 1px solid rgba(218, 216, 216, 0.6);
   padding: 3rem;
   cursor: pointer;
+}
+
+/* With ellipsis, white-space, overflow hidden, I can control the long text */
+
+.info-container .ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  /* max-width: 100%; */
+}
+
+.info-container .product-price {
+  color: #731627;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .link {

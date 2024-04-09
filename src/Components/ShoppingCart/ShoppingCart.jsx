@@ -39,7 +39,7 @@ function ShoppingCart() {
         <div className="empty-cart">
           <h2 className="your-cart">Your Cart is empty</h2>
           <img className="empty-cart-img" src={empty} alt="" width={200} />
-          <p>Take a closer look ⬇️</p>
+          <p>Want to give it another try? ⬇️</p>
           <button
             className="back-to-products"
             onClick={() => navigate("/products")}
@@ -52,12 +52,16 @@ function ShoppingCart() {
           {state.cart.length <= 1 ? (
             <div className="your-cart">
               <h2>Your cart ({state.cart.length + " item"})</h2>
-              <p>You can add up to 5 items per product.</p>
+              <p>
+                You can add up to 5 items per product.
+              </p>
             </div>
           ) : (
             <div className="your-cart">
               <h2>Your cart ({state.cart.length + " items"})</h2>
-              <p>You can add up to 5 items per product.</p>
+              <p>
+                You can add up to 5 items per product.
+              </p>
             </div>
           )}
           <div className="general-cart">
@@ -65,17 +69,22 @@ function ShoppingCart() {
               {state.cart.map((product) => (
                 <div className="cart-card" key={product.id}>
                   <div className="image-holder">
-                    <img
-                      src={product.image}
-                      alt={product.title}
-                      className="cart-img"
-                    />
+                    <Link to={`/products/${product.id}`} className="image-holder2">
+                      <img
+                        src={product.image}
+                        alt={product.title}
+                        className="cart-img"
+                      />
+                    </Link>
                   </div>
                   <div className="cart-desc">
                     <h3>{product.title}</h3>
                     <div className="quantity-wrapper">
                       <h4>
-                        <span>{product.price}€</span> - VAT included
+                        <span className="price-shopping-cart">
+                          {product.price}€
+                        </span>{" "}
+                        - VAT included
                       </h4>
                       <input
                         type="number"

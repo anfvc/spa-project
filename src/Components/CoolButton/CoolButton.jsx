@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import "../Button/CoolButton.css";
+import "../CoolButton/CoolButton.css";
 
 function CoolButton({ onClick }) {
   return (

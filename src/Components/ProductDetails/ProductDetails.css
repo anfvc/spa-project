@@ -6,11 +6,12 @@
 
 .back {
   position: absolute;
-  background-color: rgba(187, 187, 187, 0.568);
-  color: black;
+  background-color: #731627;
+  color: white;
   font-weight: 800;
   padding: 0.5rem;
   top: 1%;
+  z-index: 900;
 }
 
 .single-product-container {
@@ -37,8 +38,8 @@
   width: 100%;
   padding: 1rem;
   object-fit: cover;
-  mix-blend-mode: lighten;
 }
+
 .desc {
   display: flex;
   flex-direction: column;
@@ -60,11 +61,11 @@
   text-align: start;
 }
 
-.price-liked {
+.price {
   letter-spacing: 5px;
   font-size: 2.5rem;
   font-weight: bold;
-  color: rgba(223, 37, 37, 0.781);
+  color: #731627;
 }
 
 .supporting-info {
@@ -159,7 +160,6 @@
 .add-to-cart-container {
   display: flex;
   width: 100%;
-  height: 10%;
   gap: 1rem;
 }
 
@@ -177,7 +177,7 @@
   justify-content: center;
   width: 100%;
   height: 100%;
-  border: none;
+  border: 3px solid black;
   background-color: transparent;
   position: relative;
   cursor: pointer;
@@ -191,8 +191,7 @@
   position: absolute;
   font-size: 15px;
   color: white;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+
   opacity: 0;
   visibility: hidden;
   transition: 0.2s linear;
@@ -215,15 +214,11 @@
 }
 
 .btn-heart-PD:hover > .icon path {
-  fill: #0c91fd;
+  fill: #731627;
 }
 
 .btn-heart-PD:hover::after {
   visibility: visible;
   opacity: 1;
   top: 105%;
-}
-
-.btn-heart-PD:active {
-  fill: #f1410c;
 }

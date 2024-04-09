@@ -21,8 +21,8 @@ function Layout() {
         </div>
         <nav>
           <ul className="left-navbar">
-            <li>Women</li>
-            <li>Men</li>
+            <NavLink to="/women"><li>Women</li></NavLink>
+            <NavLink to="/men"><li>Men</li></NavLink>
           </ul>
           <ul className="mid-navbar">
             <NavLink to="/" title="Home">

@@ -9,11 +9,45 @@
 }
 
 .home-image {
-  width: 99vw;
+  width: 100vw;
   height: 100vh;
   font-size: 1.6rem;
   background-image: url("../../assets/homeimg.jpg");
-  background-position: top;
+  background-position: right;
   background-size: cover;
   background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-message {
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background-color: rgba(255, 255, 255, 0.822);
+  bottom: 3rem;
+  width: 50%;
+  height: 20%;
+  margin-top: 20rem;
+  position: absolute;
+}
+
+.welcome {
+}
+
+.welcome-greeting{
+  font-weight: bold;
+}
+
+#welcome-button {
+  width: 50%;
+  height: 25%;
+  padding: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
 }
