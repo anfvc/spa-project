@@ -1,7 +1,7 @@
 .order-container {
   margin: 20rem 0 10rem;
   width: 70vw;
-  /* height: 100vh; */
+  height: 50%;
   max-width: 1200px;
 }
 
@@ -37,7 +37,7 @@
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  gap: 5rem;
 }
 
 form {
@@ -63,6 +63,12 @@ form > input {
 .pay-message {
   text-align: left;
   font-size: 1.3rem;
+}
+
+.payment-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 #payment {
@@ -142,4 +148,19 @@ option:hover {
   color: #731627;
   font-weight: bold;
   font-style: italic;
+}
+
+@media (max-width: 946px) {
+  .column-container {
+    flex-direction: column;
+  }
+
+  .order-column,
+  .delivery-column {
+    width: 100%;
+  }
+
+  .order-container {
+    margin: 10rem 0 10rem;
+  }
 }

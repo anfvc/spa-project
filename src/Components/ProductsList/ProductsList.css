@@ -2,7 +2,7 @@
 
 .general-products-container {
   margin: 20rem 0 10rem;
-  width: 95vw;
+  width: 90vw;
   max-width: 1200px;
 
   /* padding: 2rem 5rem 2rem; */
@@ -19,6 +19,10 @@
   /* padding: 4rem; */
   background-color: rgba(218, 216, 216, 0.6);
 
+}
+
+.product-card-container {
+  position: relative;
 }
 
 .product-card1 {
@@ -122,4 +126,10 @@
 .link {
   position: absolute;
   bottom: 0;
+}
+
+@media (max-width: 946px) {
+  .general-products-container {
+    margin: 10rem 0 10rem;
+  }
 }

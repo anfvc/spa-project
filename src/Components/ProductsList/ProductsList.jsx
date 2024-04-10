@@ -18,36 +18,36 @@ function Products() {
         <div className="products-container">
           {state.products.map((product) => {
             return (
-              <Link
-                to={`/products/${product.id}`}
-                className="product-card1"
-                key={product.id}
-              >
-                <div className="product-card2">
-                  <div className="product-img-container">
-                    <img
-                      src={product.image}
-                      alt="product-images"
-                      className="product-list-image"
-                    />
-                    <span className="new">New</span>
-                    <span
-                      type="button"
-                      title="Like Product"
-                      onClick={() => handleLike(product)}
-                      className="heart"
-                    >
-                      <FontAwesomeIcon icon={faHeart} />
-                    </span>
+              <div className="product-card-container" key={product.id}>
+                <Link to={`/products/${product.id}`} className="product-card1">
+                  <div className="product-card2">
+                    <div className="product-img-container">
+                      <img
+                        src={product.image}
+                        alt="product-images"
+                        className="product-list-image"
+                      />
+                      <span className="new">New</span>
+                    </div>
+                    <div className="info-container">
+                      <h4 title={product.title} className="ellipsis">
+                        {product.title}
+                      </h4>
+                      <span className="product-price">
+                        {product.price.toFixed(2)}€
+                      </span>
+                    </div>
                   </div>
-                  <div className="info-container">
-                    <h4 title={product.title} className="ellipsis">
-                      {product.title}
-                    </h4>
-                    <span className="product-price">{product.price.toFixed(2)}€</span>
-                  </div>
-                </div>
-              </Link>
+                </Link>
+                <span
+                  type="button"
+                  title="Like Product"
+                  onClick={() => handleLike(product)}
+                  className="heart"
+                >
+                  <FontAwesomeIcon icon={faHeart} />
+                </span>
+              </div>
             );
           })}
         </div>

@@ -15,6 +15,7 @@ function ProductDetails() {
   const [showDescription, setShowDescription] = useState(false);
   const [selectedSize, setSelectedSize] = useState("");
   const [selectedColors, setSelectedColors] = useState([]);
+  const [showError, setShowError] = useState(false);
 
   //we need to find the product that matches our :id from our Route path
   const findProduct = state.products.find((product) => product.id === +id);
@@ -47,9 +48,11 @@ function ProductDetails() {
           dispatch({ type: "TO_CART", payload: productToAdd });
         } else {
           if (!selectedColors.length) {
-            alert("You must select a color first");
+            // alert("You must select a color first");
+            setShowError(true);
           } else if (!selectedSize) {
-            alert("You must select a size first.");
+            // alert("You must select a size first.");
+            setShowError(true);
           }
         }
       } else {
@@ -81,11 +84,11 @@ function ProductDetails() {
         <Loader />
       ) : (
         <div className="single-product-container">
-          <span title="Back" className="back">
-            {" "}
-            New
-          </span>
           <div className="image-details-container">
+            <span title="Back" className="back">
+              {" "}
+              New
+            </span>
             <img
               id="product-details-image"
               src={findProduct.image}
@@ -105,7 +108,12 @@ function ProductDetails() {
               <>
                 <div className="supporting-info">
                   <div>
-                    <h5>Color:</h5>
+                    <h5>
+                      Color:{" "}
+                      {!selectedColors.length && showError && (
+                        <p className="error-warning">You must select a color.</p>
+                      )}
+                    </h5>
                   </div>
                   <div className="colors-container">
                     <CoolCheckBox
@@ -151,12 +159,15 @@ function ProductDetails() {
                     <label htmlFor="Yellow">Yellow</label>
                   </div>
                   <div className="sizes-container">
+                    {!selectedSize && showError && (
+                      <p className="error-warning">You must select a size.</p>
+                    )}
                     <select
                       name="Choose your size"
                       id="sizes"
                       onChange={handleSize}
                     >
-                      <option value="" hidden>
+                      <option value="Choose your size" hidden>
                         Choose your size
                       </option>
                       <option value="S" name="S">

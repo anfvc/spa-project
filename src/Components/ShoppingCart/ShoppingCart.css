@@ -165,3 +165,29 @@
 .pay-now {
   padding: 1.2rem;
 }
+
+@media (max-width: 1080px) {
+  .empty-cart {
+    margin-top: 10rem;
+  }
+
+  .your-cart {
+    margin: 15rem 0 5rem;
+  }
+
+  .general-cart {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .checkout,
+  .basket {
+    width: 100%;
+  }
+}
+
+@media (max-width: 946px) {
+  .your-cart {
+    margin: 5rem 0 5rem;
+  }
+}

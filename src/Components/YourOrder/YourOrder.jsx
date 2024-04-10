@@ -43,11 +43,10 @@ function YourOrder() {
       dispatch({ type: "CLEAR_ORDER_SUMMARY" });
       dispatch({ type: "EMPTY_CART" });
       setShowModal(true);
+      setTimeout(() => {
+        navigate("/products"); // Navigate back to products page after a delay
+      }, 6000); // Adjust the delay time as needed
     }
-
-    setTimeout(() => {
-      navigate("/products"); // Navigate back to products page after a delay
-    }, 10000); // Adjust the delay time as needed
 
     setInput({ name: "", lastname: "", address: "", postcode: "", city: "" });
   }

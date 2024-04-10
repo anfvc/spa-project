@@ -3,15 +3,23 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import "./LayOut.css";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { MainContext } from "../../Context/MainContext";
 
 function Layout() {
   const { state } = useContext(MainContext);
+  const [showMenu, setShowMenu] = useState(false);
+
+  function toggleMenu() {
+    setShowMenu(!showMenu);
+  }
 
   return (
-    <div className="layout">
+    <div className={`layout ${showMenu ? "menu-active" : ""}`}>
       <div className="nav-holder">
+        <button className="hamburger-menu" onClick={toggleMenu}>
+          &#9776;
+        </button>
         <div className="extra-details-container">
           <div className="extra-details">
             <span>Help and Contact</span>
@@ -21,8 +29,12 @@ function Layout() {
         </div>
         <nav>
           <ul className="left-navbar">
-            <NavLink to="/women"><li>Women</li></NavLink>
-            <NavLink to="/men"><li>Men</li></NavLink>
+            <NavLink to="/women">
+              <li>Women</li>
+            </NavLink>
+            <NavLink to="/men">
+              <li>Men</li>
+            </NavLink>
           </ul>
           <ul className="mid-navbar">
             <NavLink to="/" title="Home">

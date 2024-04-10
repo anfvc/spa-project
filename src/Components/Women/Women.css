@@ -68,3 +68,15 @@
   color: #731627;
   font-size: 2rem;
 }
+
+@media (max-width: 946px) {
+  .products-for-women {
+    margin: 5rem 0 10rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .women-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
