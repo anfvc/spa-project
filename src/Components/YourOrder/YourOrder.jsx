@@ -108,7 +108,7 @@ function YourOrder() {
               id="name"
               type="text"
               onChange={handleChange}
-              value={input.name}
+              value={input.name} placeholder="Your name goes here..."
               required
             />
             <label htmlFor="lastname" id="lastname">
@@ -123,7 +123,7 @@ function YourOrder() {
               id="lastname"
               type="text"
               onChange={handleChange}
-              value={input.lastname}
+              value={input.lastname} placeholder="Your last name goes here..."
               required
             />
             <label htmlFor="address" id="address">
@@ -138,7 +138,7 @@ function YourOrder() {
               id="address"
               type="text"
               onChange={handleChange}
-              value={input.address}
+              value={input.address} placeholder="Your address goes here..."
               required
             />
             <label htmlFor="postcode" id="postcode">
@@ -153,7 +153,7 @@ function YourOrder() {
               id="postcode"
               type="text"
               onChange={handleChange}
-              value={input.postcode}
+              value={input.postcode} placeholder="Please enter a valid postcode..."
               required
             />
             <label htmlFor="city" id="city">
@@ -168,7 +168,7 @@ function YourOrder() {
               id="city"
               type="text"
               onChange={handleChange}
-              value={input.city}
+              value={input.city} placeholder="Please enter your city"
               required
             />
             <h5 className="country">Germany</h5>

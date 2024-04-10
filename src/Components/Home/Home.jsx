@@ -8,7 +8,7 @@ function Home() {
   return (
     <div className="home-image">
       <div className="welcome-message">
-        <h2 className="welcome">Welcome to the React Shop</h2>
+        <h1 className="welcome">Welcome to the React Shop</h1>
         <p className="welcome-greeting">We're happy you're here. To check our products, click below!</p>
         <button onClick={() => navigate("/products")} id="welcome-button" className="welcome-button">To Products</button>
       </div>
