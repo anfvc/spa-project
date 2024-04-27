@@ -10,6 +10,11 @@
   padding: 3rem 0;
 }
 
+.summary .order-total {
+  font-weight: 800;
+  color: #731627;
+}
+
 .column-container {
   display: flex;
   gap: 3rem;

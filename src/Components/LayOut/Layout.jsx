@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
@@ -9,10 +9,16 @@ import { MainContext } from "../../Context/MainContext";
 function Layout() {
   const { state } = useContext(MainContext);
   const [showMenu, setShowMenu] = useState(false);
+  const navigate = useNavigate();
 
   function toggleMenu() {
     setShowMenu(!showMenu);
   }
+
+  function closeMenu() {
+    setShowMenu(false)
+  }
+
 
   return (
     <div className={`layout ${showMenu ? "menu-active" : ""}`}>
@@ -29,24 +35,24 @@ function Layout() {
         </div>
         <nav>
           <ul className="left-navbar">
-            <NavLink to="/women">
+            <NavLink to="/women" onClick={closeMenu}>
               <li>Women</li>
             </NavLink>
-            <NavLink to="/men">
+            <NavLink to="/men" onClick={closeMenu}>
               <li>Men</li>
             </NavLink>
           </ul>
           <ul className="mid-navbar">
-            <NavLink to="/" title="Home">
+            <NavLink to="/" title="Home" onClick={closeMenu}>
               <li>Home</li>
             </NavLink>
 
-            <NavLink to="/products" title="Products">
+            <NavLink to="/products" title="Products" onClick={closeMenu}>
               <li>Products</li>
             </NavLink>
           </ul>
           <ul className="right-navbar">
-            <NavLink to="/cart">
+            <NavLink to="/cart" onClick={closeMenu}>
               <li className="cart-icon" title="Shopping Cart">
                 <FontAwesomeIcon icon={faCartShopping} />
                 <span
@@ -58,7 +64,7 @@ function Layout() {
                 </span>
               </li>
             </NavLink>
-            <NavLink to="/liked">
+            <NavLink to="/liked" onClick={closeMenu}>
               <li className="heart-icon" title="Liked Products">
                 <FontAwesomeIcon icon={faHeart} />
                 <span

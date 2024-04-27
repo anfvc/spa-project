@@ -51,9 +51,20 @@ function YourOrder() {
     setInput({ name: "", lastname: "", address: "", postcode: "", city: "" });
   }
 
+  function calcTotal() {
+    let total = state.cart.reduce((acc, current) => {
+      console.log(state.cart);
+      return acc + current.price;
+    }, 0);
+
+    return total.toFixed(2);
+  }
+
   return (
     <div className="order-container">
-      <h2 className="summary">ORDER SUMMARY</h2>
+      <h2 className="summary">
+        ORDER SUMMARY (To pay: <span className="order-total">{calcTotal()}€</span>
+        )</h2>
       <div className="column-container">
         <div className="order-column">
           <h2>ORDER</h2>
@@ -77,6 +88,7 @@ function YourOrder() {
                   <h3 className="order-ellipsis">{product.title}</h3>
                   <h4>Quantity: x{product.quantity}</h4>
                   <h4>Size: {product.selectedSize}</h4>
+                  <h4>Price: {product.price.toFixed(2)}€</h4>
                   <h4>Color(s): {product.selectedColors}</h4>
                   <div>
                     <Link
@@ -108,7 +120,8 @@ function YourOrder() {
               id="name"
               type="text"
               onChange={handleChange}
-              value={input.name} placeholder="Your name goes here..."
+              value={input.name}
+              placeholder="Your name goes here..."
               required
             />
             <label htmlFor="lastname" id="lastname">
@@ -123,7 +136,8 @@ function YourOrder() {
               id="lastname"
               type="text"
               onChange={handleChange}
-              value={input.lastname} placeholder="Your last name goes here..."
+              value={input.lastname}
+              placeholder="Your last name goes here..."
               required
             />
             <label htmlFor="address" id="address">
@@ -138,7 +152,8 @@ function YourOrder() {
               id="address"
               type="text"
               onChange={handleChange}
-              value={input.address} placeholder="Your address goes here..."
+              value={input.address}
+              placeholder="Your address goes here..."
               required
             />
             <label htmlFor="postcode" id="postcode">
@@ -153,7 +168,8 @@ function YourOrder() {
               id="postcode"
               type="text"
               onChange={handleChange}
-              value={input.postcode} placeholder="Please enter a valid postcode..."
+              value={input.postcode}
+              placeholder="Please enter a valid postcode..."
               required
             />
             <label htmlFor="city" id="city">
@@ -168,7 +184,8 @@ function YourOrder() {
               id="city"
               type="text"
               onChange={handleChange}
-              value={input.city} placeholder="Please enter your city"
+              value={input.city}
+              placeholder="Please enter your city"
               required
             />
             <h5 className="country">Germany</h5>
