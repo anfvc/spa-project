@@ -51,20 +51,30 @@ function YourOrder() {
     setInput({ name: "", lastname: "", address: "", postcode: "", city: "" });
   }
 
+  const delivery = 4.99;
+  // if total is above 29.90€, delivery will be free. If not, we charge 4.99€ delivery
+  const freeDeliveryFrom = 29.9;
+
   function calcTotal() {
-    let total = state.cart.reduce((acc, current) => {
+    let subTotal = state.cart.reduce((acc, current) => {
       console.log(state.cart);
-      return acc + current.price;
+      return acc + current.price * current.quantity;
     }, 0);
 
-    return total.toFixed(2);
+    const deliveryCost = subTotal >= freeDeliveryFrom ? 0 : delivery;
+
+    return { subTotal, deliveryCost };
   }
+
+  const { subTotal, deliveryCost } = calcTotal();
+  const total = subTotal + deliveryCost;
 
   return (
     <div className="order-container">
       <h2 className="summary">
-        ORDER SUMMARY (To pay: <span className="order-total">{calcTotal()}€</span>
-        )</h2>
+        ORDER SUMMARY (To pay:{" "}
+        {state.cart.length === 0 ? "" : <span className="order-total">{total}€</span>})
+      </h2>
       <div className="column-container">
         <div className="order-column">
           <h2>ORDER</h2>
